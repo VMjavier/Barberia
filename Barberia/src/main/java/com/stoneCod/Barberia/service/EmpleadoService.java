@@ -5,8 +5,7 @@ import com.stoneCod.Barberia.repository.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class EmpleadoService {
@@ -14,16 +13,28 @@ public class EmpleadoService {
     @Autowired
     EmpleadoRepository empleadoRepository;
 
+//    public Empleado crearYActualizarEmpleado(Empleado empleado){
+//        Empleado empleado1 = empleadoRepository.save(empleado);
+//        return empleado1;
+//    }
+
     public void crearYActualizarEmpleado(Empleado empleado){
         empleadoRepository.save(empleado);
     }
 
     public List<Empleado> verEmpleado(){
-        List<Empleado> empleados = new ArrayList<Empleado>();
-        empleados.addAll(empleadoRepository.findAll());
-        return empleados;
+        return empleadoRepository.findAll();
     }
 
+//    public List<Empleado> verEmpleado(){
+//        List<Empleado> empleados = new ArrayList<Empleado>();
+//        empleados.addAll(empleadoRepository.findAll());
+//        return empleados;
+//    }
+
+    public Empleado verEmpleadoId(Long id){
+        return empleadoRepository.findById(id).get();
+    }
     public void eliminarEmpleado(Long id){
         empleadoRepository.deleteById(id);
     }
