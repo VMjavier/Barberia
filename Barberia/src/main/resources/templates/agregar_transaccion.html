@@ -11,20 +11,20 @@
 </head>
 <body>
 <form th:action="@{/transaccion}" method="post">
-
+<!--
     <label for="nombreEmpleado">Nombre Empleado</label>
     <input type="number" id="nombreEmpleado" th:field="${transaccion.empleado.id}">
 
     <label for="nombreEmpresa">Nombre Empresa</label>
     <input type="number" id="nombreEmpresa" th:field="${transaccion.empresa.id}">
-
+-->
     <label for="concepto">Concepto</label>
     <input type="text" id="concepto" th:field="${transaccion.concepto}">
 
     <label for="monto">Monto</label>
     <input type="number" id="monto" th:field="${transaccion.monto}">
 
-    <input type="submit" value="Agregar transaccion">
+    <input type="submit" value="Agregar Transaccion">
 
 </form>
 </body>
